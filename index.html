@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>মারিয়া, তোমার জন্য একটা গল্প ❤️</title>
+<meta name="description" content="মাজিদুলের পক্ষ থেকে মারিয়ার জন্য একটি বিশেষ, ব্যক্তিগত গল্প।">
+<meta name="robots" content="noindex, nofollow">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Noto+Serif+Bengali:wght@400;500;600;700&family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ================= CURSOR GLOW ================= -->
+<div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+<!-- ================= AMBIENT LAYERS (shared across scenes) ================= -->
+<div class="aurora-layer" aria-hidden="true">
+  <span class="aurora a1"></span>
+  <span class="aurora a2"></span>
+  <span class="aurora a3"></span>
+</div>
+<div class="stars-layer" id="starsLayer" aria-hidden="true"></div>
+<div class="fireflies-layer" id="firefliesLayer" aria-hidden="true"></div>
+<div class="petals-layer" id="petalsLayer" aria-hidden="true"></div>
+<div class="hearts-layer" id="heartsLayer" aria-hidden="true"></div>
+
+<!-- ================= MUSIC PLAYER ================= -->
+<div class="music-player" id="musicPlayer">
+  <button class="music-toggle" id="musicToggle" aria-label="গান চালু বা বন্ধ করো" aria-pressed="false">
+    <svg class="icon-play" viewBox="0 0 24 24" width="18" height="18"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+    <svg class="icon-pause" viewBox="0 0 24 24" width="18" height="18" style="display:none"><path d="M6 5h4v14H6zM14 5h4v14h-4z" fill="currentColor"/></svg>
+  </button>
+  <div class="music-info">
+    <span class="music-bars"><i></i><i></i><i></i><i></i></span>
+    <span class="music-label">প্রণয়ের সুর</span>
+  </div>
+  <button class="music-mute" id="musicMute" aria-label="মিউট করো">
+    <svg class="icon-vol-on" viewBox="0 0 24 24" width="16" height="16"><path d="M3 10v4h4l5 5V5L7 10H3z" fill="currentColor"/></svg>
+    <svg class="icon-vol-off" viewBox="0 0 24 24" width="16" height="16" style="display:none"><path d="M3 10v4h4l5 5V5L7 10H3zM19 9l-4 4m0-4l4 4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+  </button>
+  <input type="range" id="musicVolume" class="music-volume" min="0" max="100" value="45" aria-label="ভলিউম">
+  <audio id="bgMusic" loop preload="none">
+    <source src="assets/music/theme.mp3" type="audio/mpeg">
+  </audio>
+</div>
+
+<!-- ================= SCENE 1 — CINEMATIC INTRO / LOADER ================= -->
+<section class="scene scene-intro" id="scene1">
+  <div class="loader" id="loader">
+    <div class="loader-particles" aria-hidden="true"></div>
+    <div class="loader-heart">
+      <svg viewBox="0 0 100 100" width="46" height="46">
+        <path d="M50 88 C20 65 4 45 4 27 C4 12 15 3 28 3 C38 3 46 9 50 18 C54 9 62 3 72 3 C85 3 96 12 96 27 C96 45 80 65 50 88Z"
+          fill="none" stroke="#e8c874" stroke-width="2.5" stroke-dasharray="320" stroke-dashoffset="320" id="loaderHeartPath"/>
+      </svg>
+    </div>
+    <p class="loader-text">গল্পটা তৈরি হচ্ছে<span class="dots"><i>.</i><i>.</i><i>.</i></span></p>
+  </div>
+
+  <div class="intro-content" id="introContent">
+    <p class="eyebrow reveal-up">একটি ব্যক্তিগত গল্প · শুধু তোমার জন্য</p>
+    <h1 class="typewriter-line" id="tw1" data-text="কিছু অনুভূতি... হাজারবার লুকিয়েও লুকানো যায় না।"></h1>
+    <h2 class="typewriter-line" id="tw2" data-text="আজ সেই অনুভূতির গল্পটাই বলতে এসেছি..."></h2>
+    <button class="btn-glow magnetic" id="enterStoryBtn">
+      <span>আমার গল্পে প্রবেশ করো</span>
+      <em>Enter My Story</em>
+    </button>
+  </div>
+</section>
+
+<!-- ================= SCENE 2 — WELCOME ================= -->
+<section class="scene scene-welcome" id="scene2">
+  <div class="glass-card hero-card scroll-reveal zoom-slow">
+    <span class="corner-glow"></span>
+    <p class="eyebrow">০১ · সূচনা</p>
+    <p class="hero-line">এই ওয়েবসাইটটি শুধু একজন বিশেষ মানুষের জন্য তৈরি করা হয়েছে...</p>
+    <p class="hero-line hero-highlight">আর সেই মানুষটি... <span class="name-glow">তুমি, মারিয়া।</span> ❤️</p>
+    <div class="scroll-hint" aria-hidden="true"><span></span>নিচে স্ক্রল করো</div>
+  </div>
+</section>
+
+<!-- ================= SCENE 3 — MY FEELINGS ================= -->
+<section class="scene scene-feelings" id="scene3">
+  <p class="section-tag scroll-reveal">০২ · অনুভূতির গল্প</p>
+  <div class="feelings-list">
+    <p class="feeling-line" data-tw="প্রথমে শুধু কথা ছিল..."></p>
+    <p class="feeling-line" data-tw="ধীরে ধীরে অপেক্ষা শুরু হলো..."></p>
+    <p class="feeling-line" data-tw="অজান্তেই তোমাকে নিয়ে ভাবতে শুরু করলাম..."></p>
+    <p class="feeling-line feeling-final" data-tw="একদিন বুঝলাম... আমি তোমাকে গোপনে ভালোবেসে ফেলেছি।"></p>
+  </div>
+  <div class="constellation-heart" aria-hidden="true">
+    <svg viewBox="0 0 200 180" width="180" height="160">
+      <path id="constPath" d="M100 165 C40 120 8 80 8 48 C8 22 28 5 52 5 C72 5 88 16 100 36 C112 16 128 5 148 5 C172 5 192 22 192 48 C192 80 160 120 100 165Z"
+        fill="none" stroke="url(#gradHeart)" stroke-width="1.5" stroke-dasharray="4 7" stroke-linecap="round"/>
+      <defs>
+        <linearGradient id="gradHeart" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#e8c874"/>
+          <stop offset="50%" stop-color="#f43f5e"/>
+          <stop offset="100%" stop-color="#a78bfa"/>
+        </linearGradient>
+      </defs>
+    </svg>
+  </div>
+</section>
+
+<!-- ================= SCENE 4 — WHY YOU ARE SPECIAL ================= -->
+<section class="scene scene-reasons" id="scene4">
+  <p class="section-tag scroll-reveal">০৩ · কেন তুমি অন্যরকম</p>
+  <h2 class="section-title scroll-reveal">তোমাকে ভালোবাসার ছয়টা কারণ</h2>
+
+  <div class="reasons-grid">
+    <article class="glass-card reason-card scroll-reveal float-card" data-tilt>
+      <span class="reason-icon">☀️</span>
+      <p>তোমার হাসিতে আমার সবচেয়ে খারাপ দিনও সহজ হয়ে যায়।</p>
+      <span class="shine"></span>
+    </article>
+    <article class="glass-card reason-card scroll-reveal float-card" data-tilt>
+      <span class="reason-icon">👂</span>
+      <p>তুমি কথা বলার সময় প্রতিটা শব্দ মন দিয়ে শোনো, এটাই তোমাকে আলাদা করে।</p>
+      <span class="shine"></span>
+    </article>
+    <article class="glass-card reason-card scroll-reveal float-card" data-tilt>
+      <span class="reason-icon">🌿</span>
+      <p>তোমার সাহস আর সততা আমাকে প্রতিদিন কিছু না কিছু নতুন শেখায়।</p>
+      <span class="shine"></span>
+    </article>
+    <article class="glass-card reason-card scroll-reveal float-card" data-tilt>
+      <span class="reason-icon">🤍</span>
+      <p>ছোট ছোট মুহূর্তেও তুমি অসাধারণ যত্ন আর মমতা দেখাও।</p>
+      <span class="shine"></span>
+    </article>
+    <article class="glass-card reason-card scroll-reveal float-card" data-tilt>
+      <span class="reason-icon">✨</span>
+      <p>তোমার পাশে থাকলে মনে হয়, আমি নিজের সবচেয়ে ভালো সংস্করণ হয়ে উঠি।</p>
+      <span class="shine"></span>
+    </article>
+    <article class="glass-card reason-card scroll-reveal float-card" data-tilt>
+      <span class="reason-icon">💫</span>
+      <p>তুমি নিজের মতো করেই অনন্য — আর ঠিক এই কারণেই আমি তোমাকে ভালোবাসি।</p>
+      <span class="shine"></span>
+    </article>
+  </div>
+</section>
+
+<!-- ================= SCENE 5 — HIDDEN LETTER ================= -->
+<section class="scene scene-letter" id="scene5">
+  <p class="section-tag scroll-reveal">০৪ · একটা গোপন চিঠি</p>
+
+  <div class="envelope-wrap scroll-reveal">
+    <div class="envelope" id="envelope">
+      <div class="env-back"></div>
+      <div class="env-letter" id="envLetter">
+        <div class="letter-paper">
+          <p class="letter-greeting">প্রিয় মারিয়া,</p>
+          <p>এই কথাগুলো অনেকদিন ধরে মনের ভেতর জমিয়ে রেখেছিলাম। তোমাকে নিয়ে ভাবনাগুলো কখনো হুট করে আসেনি, ধীরে ধীরে জমেছে, একদম নিঃশব্দে।</p>
+          <p>তোমার হাসি, তোমার কথা বলার ধরন, তুমি যেভাবে ছোট ছোট জিনিসেও আন্তরিকতা দেখাও — এসব কিছু আমাকে না জানিয়েই তোমার প্রতি টেনে নিয়েছে।</p>
+          <p>আজ এই ছোট্ট গল্পের মাধ্যমে সেই অনুভূতিটাই তোমার কাছে পৌঁছে দিতে চাইলাম, সহজভাবে, নিঃসংকোচে।</p>
+          <p class="letter-sign">ভালোবাসা নিয়ে,<br><span>মাজিদুল</span></p>
+        </div>
+      </div>
+      <div class="env-front">
+        <span class="env-seal" id="envSeal">M</span>
+      </div>
+      <div class="env-flap"></div>
+    </div>
+    <button class="btn-glow magnetic btn-open-letter" id="openLetterBtn">
+      <span>আমার চিঠিটা খোলো</span>
+      <em>Open My Letter ❤️</em>
+    </button>
+  </div>
+</section>
+
+<!-- ================= SCENE 6 — PROPOSAL ================= -->
+<section class="scene scene-proposal" id="scene6">
+  <div class="spotlight" aria-hidden="true"></div>
+
+  <div class="proposal-inner">
+    <div class="pulse-heart" aria-hidden="true">
+      <svg viewBox="0 0 100 100" width="54" height="54">
+        <path d="M50 88 C20 65 4 45 4 27 C4 12 15 3 28 3 C38 3 46 9 50 18 C54 9 62 3 72 3 C85 3 96 12 96 27 C96 45 80 65 50 88Z" fill="#f43f5e"/>
+      </svg>
+    </div>
+
+    <p class="section-tag">০৫ · প্রশ্ন</p>
+    <h2 class="proposal-title">আজ শুধু একটা প্রশ্ন...</h2>
+    <p class="proposal-question">তুমি কি আমাকে একটা সুযোগ দেবে, মারিয়া?</p>
+
+    <div class="proposal-buttons" id="proposalButtons">
+      <button class="btn-answer btn-yes" id="btnYes">
+        <span>হ্যাঁ, দেব 💚</span>
+      </button>
+      <button class="btn-answer btn-wait" id="btnWait">
+        <span>আরেকটু সময় চাই 💛</span>
+      </button>
+      <button class="btn-answer btn-no" id="btnNo">
+        <span>না, দুঃখিত ❤️</span>
+      </button>
+    </div>
+
+    <!-- YES response -->
+    <div class="answer-panel" id="panelYes" hidden>
+      <h3>তুমি আমার পৃথিবীটা আরও সুন্দর করে দিলে। ❤️</h3>
+      <p>ধন্যবাদ, মারিয়া। এখন চলো কথা বলি —</p>
+      <div class="contact-buttons">
+        <a class="btn-contact btn-whatsapp magnetic" href="https://wa.me/8801746933393" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M17.5 14.4c-.3-.1-1.6-.8-1.8-.9-.2-.1-.4-.1-.6.1-.2.3-.7.9-.8 1-.2.2-.3.2-.5.1-.3-.1-1.2-.4-2.2-1.4-.8-.7-1.4-1.6-1.5-1.9-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.4.1-.2 0-.4 0-.5 0-.1-.6-1.5-.8-2-.2-.5-.4-.5-.6-.5h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3 4.8 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.6-.7 1.9-1.3.2-.6.2-1.1.2-1.2-.1-.2-.3-.3-.6-.4z"/><path fill="currentColor" d="M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.6 1.4 5.1L2 22l5-1.3c1.4.8 3.1 1.2 5 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.7 0-3.3-.4-4.6-1.3l-.3-.2-3 .8.8-2.9-.2-.3C3.9 15 3.5 13.5 3.5 12 3.5 7.3 7.3 3.5 12 3.5S20.5 7.3 20.5 12 16.7 20.2 12 20.2z"/></svg>
+          WhatsApp-এ কথা বলি
+        </a>
+        <a class="btn-contact btn-telegram magnetic" href="https://t.me/Rakib7u0" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M21.5 3.5L2.7 10.9c-1.2.5-1.2 1.2-.2 1.5l4.8 1.5 1.9 5.7c.2.6.4.8.8.8.4 0 .6-.2.9-.5l2.1-2 4.4 3.2c.8.4 1.3.2 1.5-.7l2.8-13.1c.3-1.2-.4-1.6-1.2-1.3zM8.5 14.2l9.1-5.7c.4-.3.8-.1.5.2l-7.6 6.9-.3 3-1.7-4.4z"/></svg>
+          Telegram-এ কথা বলি
+        </a>
+      </div>
+    </div>
+
+    <!-- WAIT response -->
+    <div class="answer-panel" id="panelWait" hidden>
+      <h3>কোনো তাড়াহুড়ো নেই। 💛</h3>
+      <p>সময় নিয়ে ভেবো। তোমার সিদ্ধান্তের অপেক্ষায় থাকব।</p>
+    </div>
+
+    <!-- NO response -->
+    <div class="answer-panel" id="panelNo" hidden>
+      <h3>বুঝতে পেরেছি। ❤️</h3>
+      <p>আমার অনুভূতির কথা শোনার জন্য ধন্যবাদ। তোমার সিদ্ধান্তকে আমি সম্মান করি। ভালো থেকো, মারিয়া।</p>
+    </div>
+  </div>
+
+  <canvas id="fxCanvas" aria-hidden="true"></canvas>
+</section>
+
+<!-- ================= SCENE 7 — ENDING ================= -->
+<section class="scene scene-ending" id="scene7">
+  <div class="ending-sky" aria-hidden="true">
+    <div class="shooting-star s1"></div>
+    <div class="shooting-star s2"></div>
+    <div class="shooting-star s3"></div>
+  </div>
+  <div class="ending-content scroll-reveal">
+    <p class="ending-line">কিছু অনুভূতি উত্তর পাওয়ার জন্য নয়,</p>
+    <p class="ending-line">সাহস করে প্রকাশ করার জন্যও হয়।</p>
+    <p class="ending-line ending-strong">আজ আমি সেটাই করলাম।</p>
+    <p class="ending-thanks">ধন্যবাদ, মারিয়া — আমার গল্পের শেষ পর্যন্ত থাকার জন্য।</p>
+    <p class="ending-credit">— মাজিদুল</p>
+  </div>
+</section>
+
+<!-- sound effects (silent-safe if files are missing) -->
+<audio id="sfxClick" preload="none" src="assets/sounds/click.mp3"></audio>
+<audio id="sfxEnvelope" preload="none" src="assets/sounds/envelope.mp3"></audio>
+<audio id="sfxSuccess" preload="none" src="assets/sounds/success.mp3"></audio>
+
+<script src="script.js"></script>
+</body>
+</html>
